@@ -73,7 +73,7 @@ jobs:
       - uses: actions/checkout@master
         with:
             repository: 'ee538/AutoGradingScript'
-            path: 'coding_grader'
+            path: 'grading_script'
       - uses: actions/checkout@master
         with:
             repository: ${{ fromJSON(needs.setup.outputs.matrix).grader_repo }}
@@ -88,7 +88,7 @@ jobs:
              mkdir grades
              mv Q*res_.txt grades
              
-             python coding_grader/coding_grades_total.py 2>&1 | tee ScoresCodingTotal.txt
+             python grading_script/coding_grades_total.py 2>&1 | tee ScoresCodingTotal.txt
              # clean temporary files
              rm -rf grades
              rm -rf ST_*
