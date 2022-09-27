@@ -85,6 +85,9 @@ jobs:
       - name: Organize the total score (coding questions)
         if: always()
         run: |
+             ls
+             echo ""
+             ls coding_grader
              mkdir grades
              mv Q*res_.txt grades
              
